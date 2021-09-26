@@ -1,0 +1,18 @@
+.category
+{
+    margin: 25px 0 50px;
+    .btn-category{
+        margin: 10px;
+        border: none;
+        padding: 10px;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 5px;
+        color: #FFFFFF;
+        background-color: #FA9905;
+        @media (max-width: 360px) {
+            margin: 5px;
+            padding: 10px;
+        }
+    }
+}

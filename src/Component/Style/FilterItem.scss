@@ -1,0 +1,75 @@
+.filter-item
+{
+    position: relative;
+    border: 2px solid #FA9905;
+    padding: 25px 15px;
+    text-align: left;
+    border-radius: 5px;
+    @media (max-width: 1024px) {
+        padding:  25px 0;
+    }
+    @media (max-width: 768px) {
+        display: flex;
+        padding: 25px 15px;
+    }
+    @media (max-width: 700px) {
+        display: block;
+        justify-content: space-between;
+    }
+    .item{
+        border-radius: 5px;
+        padding: 15px 20px;
+        border: 1px solid #51C4D3;
+        margin: 20px;
+        @media (max-width: 768px) {
+            flex: 1;
+        }
+    }
+    h6{
+        color: #FA9905;
+    }
+    .title-filter{
+        position: absolute;
+        top: -20px;
+        left: 20px;
+        background-color: #FFFFFF;
+        color: #FA9905;
+        font-weight: 600;
+        padding: 5px 20px;
+    }
+    input{
+        width: 43%;
+        outline: none;
+        padding: 5px 15px;
+        border: 1px solid #51C4D3;
+        border-radius: 10px;
+        font-size: 17px;
+        color: #FA9905;
+        margin: 10px;
+        @media (max-width: 1024px) {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+        }
+    }
+    .color
+    {
+        height: 275px;
+        overflow: auto;
+        .color-search{
+            margin: 15px 0;
+            width: 100%;
+        }
+        label{
+            margin-top: -5px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .check-box{
+            display: inline-block;
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
