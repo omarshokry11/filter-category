@@ -6,35 +6,37 @@ import "./Style/CategoryItems.scss";
 export default function CategoryItems() {
 
     const [product, setProduct] = useState([]);
-
-    useEffect(() => {
-        API("products")
-            .then(({ data, status }) => {
-                if (status === 200) {
-                    setProduct(data);
-                } else {
-                    console.log(data);
-                }
-            })
-    }, []);
-
-    // Filter Use Button
     const filterItem = (categItem) => {
         const updateItems = product.filter((curElem) => {
-            console.log(curElem.categoryId, categItem);
             return curElem.categoryId === parseInt(categItem);
         });
+        console.log(updateItems);
         setProduct(updateItems);
     }
+    const categoryItem = [
+        {id: 1, name: "Category-1", number: "1"},
+        {id: 2, name: "Category-2", number: "2"},
+        {id: 3, name: "Category-3", number: "3"},
+        {id: 4, name: "Category-4", number: "4"},
+        {id: 5, name: "Category-5", number: "5"}
+    ]
+
+    useEffect(() => {
+        if(product.length === 0){
+            API("products")
+                .then(({ data, status }) => {
+                    if (status === 200) {
+                        setProduct(data);
+                    } else {
+                        console.log(data);
+                    }
+                })
+        }
+    }, [product]);
 
     return(
         <div className="category">
-            <button className="btn-category" onClick={() => setProduct(product)}>All Category</button>
-            <button className="btn-category" onClick={() => filterItem('1')}>Category-1</button>
-            <button className="btn-category" onClick={() => filterItem('2')}>Category-2</button>
-            <button className="btn-category" onClick={() => filterItem('3')}>Category-3</button>
-            <button className="btn-category" onClick={() => filterItem('4')}>Category-4</button>
-            <button className="btn-category" onClick={() => filterItem('5')}>Category-5</button>
+            {categoryItem.map((item) => <button className="btn-category" onClick={() => filterItem(item.number)} key={item.id}>{item.name}</button>)}
         </div>
     )
 }

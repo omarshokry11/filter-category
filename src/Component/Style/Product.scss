@@ -54,25 +54,4 @@
             }
         }
     }
-    .rating
-    {
-        margin: 20px 0;
-        div{
-            width: 42%;
-            margin: 20px 0;
-            cursor: pointer;
-            @media (max-width: 1024px) {
-                width: 100%;
-                text-align: center;
-            }
-        }
-        i{
-            font-size: 20px;
-            margin-right: 5px;
-            color: #FA9905;
-            @media (max-width: 280px) {
-                margin-right: 4px;
-            }
-        }
-    }
 }

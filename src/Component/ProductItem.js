@@ -10,15 +10,17 @@ export default function ProductItem() {
     const [product, setProduct] = useState([]);
 
     useEffect(() => {
-        API("products")
-            .then(({ data, status }) => {
-                if (status === 200) {
-                    setProduct(data);
-                } else {
-                    console.log(data);
-                }
-            })
-    }, []);
+        if(product.length === 0){
+            API("products")
+                .then(({ data, status }) => {
+                    if (status === 200) {
+                        setProduct(data);
+                    } else {
+                        console.log(data);
+                    }
+                })
+        }
+    }, [product]);
 
     return(
         <div className="product-item">
