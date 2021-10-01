@@ -6,8 +6,8 @@ import "./Style/FilterPrice.scss";
 
 export default function FilterPrice() {
 
-    const [value, setValue] =  useState([10,5]);
     const [product, setProduct] = useState([]);
+    const [value, setValue] =  useState([100, 500]);
     const rangeSelector = (event, newValue) => {
         setValue(newValue);
         console.log(newValue)
@@ -35,6 +35,8 @@ export default function FilterPrice() {
                 value={value}
                 onChange={rangeSelector}
                 valueLabelDisplay="auto"
+                min={0}
+                max={1000}
             />
         </div>
     )
